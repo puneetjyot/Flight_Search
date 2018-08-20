@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00bbac3a-2633-4f1a-97d6-95ad476e828f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AirIndia.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JetAir.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indigo.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FileReaders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FileReaders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FileReaders.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FileReaders.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FileReaders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Readfiles/FileReaders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inputvariable/InputParameters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inputvariable/InputParameters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FileReaders.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/inputvariable/InputParameters.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/inputvariable/InputParameters.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -30,11 +28,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileReaders.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/FileReaders.java">
+      <file leaf-file-name="FileReaders.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Readfiles/FileReaders.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+            <state relative-caret-position="67">
+              <caret line="39" selection-start-line="39" selection-end-line="39" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#472#473#0" expanded="true" />
@@ -44,11 +42,26 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="FlightSearch.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/FlightSearch/FlightSearch.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="17" column="46" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="InputParameters.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/inputvariable/InputParameters.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
+              <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -58,8 +71,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -74,6 +87,8 @@
         <option value="$PROJECT_DIR$/src/main/java/Enum/OutputPreference.java" />
         <option value="$PROJECT_DIR$/src/main/java/inputvariable/InputParameters.java" />
         <option value="$PROJECT_DIR$/src/main/java/FileReaders.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Readfiles/FileReaders.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FlightSearch/FlightSearch.java" />
       </list>
     </option>
   </component>
@@ -112,7 +127,9 @@
     <option name="width" value="981" />
     <option name="height" value="1032" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -151,7 +168,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Enum" type="462c0819:PsiDirectoryNode" />
+              <item name="FlightSearch" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -172,16 +189,27 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.FileReaders">
+  <component name="RunManager" selected="Application.FlightSearch">
     <configuration name="FileReader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="FileReader" />
       <module name="Flightsearch" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
     <configuration name="FileReaders" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="FileReaders" />
+      <option name="MAIN_CLASS_NAME" value="Readfiles.FileReaders" />
       <module name="Flightsearch" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="FlightSearch" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FlightSearch.FlightSearch" />
+      <module name="Flightsearch" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="FlightSearch.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -227,6 +255,7 @@
     <list>
       <item itemvalue="Application.FileReaders" />
       <item itemvalue="Application.FileReader" />
+      <item itemvalue="Application.FlightSearch" />
     </list>
     <recent_temporary>
       <list>
@@ -249,7 +278,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="TODO" order="10" />
@@ -260,7 +288,7 @@
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.17651822" />
       <window_info anchor="bottom" id="Version Control" order="2" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.42218247" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.27728087" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
@@ -322,10 +350,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FileReaders.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Readfiles/FileReaders.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1054">
           <caret line="62" column="23" lean-forward="true" selection-start-line="62" selection-start-column="23" selection-end-line="62" selection-end-column="23" />
@@ -351,7 +382,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FileReaders.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Readfiles/FileReaders.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="884">
           <caret line="54" column="39" lean-forward="true" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
@@ -380,18 +411,31 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/inputvariable/InputParameters.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FileReaders.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Readfiles/FileReaders.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+        <state relative-caret-position="67">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#472#473#0" expanded="true" />
             <element signature="e#504#505#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FlightSearch/FlightSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="17" column="46" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

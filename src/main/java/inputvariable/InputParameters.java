@@ -2,11 +2,13 @@ package inputvariable;
 
 import Enum.OutputPreference;
 
+import java.time.LocalDate;
+
 
 public class InputParameters {
 
     private String Arrival_location;
-    private String Flightdate;
+    private LocalDate Flightdate;
     private String Flightclass;
     private OutputPreference outputPreference;
     private String Departure_location;
@@ -28,11 +30,11 @@ public class InputParameters {
     }
 
 
-    public void setFlightdate(String flightdate) {
+    public void setFlightdate(LocalDate flightdate) {
         Flightdate = flightdate;
     }
 
-    public String getFlightdate() {
+    public LocalDate getFlightdate() {
         return Flightdate;
     }
 
