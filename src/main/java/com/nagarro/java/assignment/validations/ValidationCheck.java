@@ -38,7 +38,7 @@ public class ValidationCheck
      *
      * @param input
      * @return boolean
-     * Checks valid Flight Class
+     * Checks valid Flight Class and ignore case
      */
 
     public boolean isValidClass(String input)

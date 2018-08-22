@@ -31,6 +31,7 @@ public class PrintInformation {
 
 
 
+
     public PrintInformation(){
 
         printlist=new ArrayList<>();
