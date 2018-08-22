@@ -1,6 +1,6 @@
-package inputvariable;
+package com.nagarro.java.assignment.input_variable;
 
-import Enum.OutputPreference;
+import com.nagarro.java.assignment.enums.OutputPreference;
 
 import java.time.LocalDate;
 
@@ -8,51 +8,68 @@ import java.time.LocalDate;
 public class InputParameters {
 
     private String Arrival_location;
+
     private LocalDate Flightdate;
+
     private String Flightclass;
+
     private OutputPreference outputPreference;
+
     private String Departure_location;
 
-    public void setArrival_location(String arrival_location) {
+    public void setArrival_Location(String arrival_location)
+    {
+
         Arrival_location = arrival_location;
+
     }
 
-    public String getArrival_location() {
+    public String getArrival_Location() {
+
         return Arrival_location;
     }
 
     public void setFlightclass(String flightclass) {
+
         Flightclass = flightclass;
     }
 
     public String getFlightclass() {
+
         return Flightclass;
     }
 
 
-    public void setFlightdate(LocalDate flightdate) {
+
+    public void setFlightDate(LocalDate flightdate)
+    {
         Flightdate = flightdate;
     }
 
-    public LocalDate getFlightdate() {
+    public LocalDate getFlightDate()
+    {
         return Flightdate;
     }
 
 
-    public void setDepartureLocation(String DepartureLocation) {
+    public void setDepartureLocation(String DepartureLocation)
+    {
 
         Departure_location = DepartureLocation;
     }
 
-    public String getDepartureLocation() {
+    public String getDepartureLocation()
+    {
         return Departure_location;
     }
 
-    public void setOutputPreference(String outputPreference) {
+    public void setOutputPreference(String outputPreference)
+    {
         this.outputPreference = OutputPreference.valueOf(outputPreference);
     }
 
-    public OutputPreference getOutputPreference() {
+    public OutputPreference getOutputPreference()
+    {
         return outputPreference;
     }
 
