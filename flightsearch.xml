@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="flightsearch" default="all">
+  
+  
+  <property file="flightsearch.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="700m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/*.rbc/**"/>
+    <exclude name="**/*.yarb/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.war"/>
+    <include name="*.swc"/>
+    <include name="*.zip"/>
+    <include name="*.egg"/>
+    <include name="*.ane"/>
+    <include name="*.jar"/>
+    <include name="*.ear"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+    <exclude name="**/?*.aj"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.1.8" value="${jdk.home.1.8}/bin"/>
+  <path id="jdk.classpath.1.8">
+    <fileset dir="${jdk.home.1.8}">
+      <include name="jre/lib/charsets.jar"/>
+      <include name="jre/lib/deploy.jar"/>
+      <include name="jre/lib/ext/access-bridge-64.jar"/>
+      <include name="jre/lib/ext/cldrdata.jar"/>
+      <include name="jre/lib/ext/dnsns.jar"/>
+      <include name="jre/lib/ext/jaccess.jar"/>
+      <include name="jre/lib/ext/jfxrt.jar"/>
+      <include name="jre/lib/ext/localedata.jar"/>
+      <include name="jre/lib/ext/nashorn.jar"/>
+      <include name="jre/lib/ext/sunec.jar"/>
+      <include name="jre/lib/ext/sunjce_provider.jar"/>
+      <include name="jre/lib/ext/sunmscapi.jar"/>
+      <include name="jre/lib/ext/sunpkcs11.jar"/>
+      <include name="jre/lib/ext/zipfs.jar"/>
+      <include name="jre/lib/javaws.jar"/>
+      <include name="jre/lib/jce.jar"/>
+      <include name="jre/lib/jfr.jar"/>
+      <include name="jre/lib/jfxswt.jar"/>
+      <include name="jre/lib/jsse.jar"/>
+      <include name="jre/lib/management-agent.jar"/>
+      <include name="jre/lib/plugin.jar"/>
+      <include name="jre/lib/resources.jar"/>
+      <include name="jre/lib/rt.jar"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.1.8}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.1.8}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.1.8"/>
+  
+  
+  <!-- Project Libraries -->
+  
+  <path id="library.maven:_com.opencsv:opencsv:3.8.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/opencsv/opencsv/3.8/opencsv-3.8.jar"/>
+  </path>
+  
+  <path id="library.maven:_commons-beanutils:commons-beanutils:1.9.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/commons-beanutils/commons-beanutils/1.9.2/commons-beanutils-1.9.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_commons-collections:commons-collections:3.2.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_commons-logging:commons-logging:1.1.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.commons:commons-csv:1.3.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/commons/commons-csv/1.3/commons-csv-1.3.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.commons:commons-lang3:3.4.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar"/>
+  </path>
+  <!-- Register Custom Compiler Taskdefs -->
+  <property name="javac2.home" value="${idea.home}/lib"/>
+  <path id="javac2.classpath">
+    <fileset dir="${javac2.home}">
+      <include name="javac2.jar"/>
+      <include name="jdom.jar"/>
+      <include name="asm-all*.jar"/>
+      <include name="jgoodies-forms.jar"/>
+    </fileset>
+  </path>
+  <target name="register.custom.compilers">
+    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
+    <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
+  </target>
+  
+  <!-- Modules -->
+  
+  
+  <!-- Module Flightsearch -->
+  
+  <dirname property="module.flightsearch.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.flightsearch" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.flightsearch" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.flightsearch" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.flightsearch" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="flightsearch.output.dir" value="${module.flightsearch.basedir}/target/classes"/>
+  <property name="flightsearch.testoutput.dir" value="${module.flightsearch.basedir}/target/test-classes"/>
+  
+  <path id="flightsearch.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="flightsearch.module.production.classpath">
+    <path refid="${module.jdk.classpath.flightsearch}"/>
+    <path refid="library.maven:_org.apache.commons:commons-csv:1.3.classpath"/>
+    <path refid="library.maven:_com.opencsv:opencsv:3.8.classpath"/>
+    <path refid="library.maven:_org.apache.commons:commons-lang3:3.4.classpath"/>
+    <path refid="library.maven:_commons-beanutils:commons-beanutils:1.9.2.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.1.classpath"/>
+    <path refid="library.maven:_commons-collections:commons-collections:3.2.1.classpath"/>
+  </path>
+  
+  <path id="flightsearch.runtime.production.module.classpath">
+    <pathelement location="${flightsearch.output.dir}"/>
+    <path refid="library.maven:_org.apache.commons:commons-csv:1.3.classpath"/>
+    <path refid="library.maven:_com.opencsv:opencsv:3.8.classpath"/>
+    <path refid="library.maven:_org.apache.commons:commons-lang3:3.4.classpath"/>
+    <path refid="library.maven:_commons-beanutils:commons-beanutils:1.9.2.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.1.classpath"/>
+    <path refid="library.maven:_commons-collections:commons-collections:3.2.1.classpath"/>
+  </path>
+  
+  <path id="flightsearch.module.classpath">
+    <path refid="${module.jdk.classpath.flightsearch}"/>
+    <pathelement location="${flightsearch.output.dir}"/>
+    <path refid="library.maven:_org.apache.commons:commons-csv:1.3.classpath"/>
+    <path refid="library.maven:_com.opencsv:opencsv:3.8.classpath"/>
+    <path refid="library.maven:_org.apache.commons:commons-lang3:3.4.classpath"/>
+    <path refid="library.maven:_commons-beanutils:commons-beanutils:1.9.2.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.1.classpath"/>
+    <path refid="library.maven:_commons-collections:commons-collections:3.2.1.classpath"/>
+  </path>
+  
+  <path id="flightsearch.runtime.module.classpath">
+    <pathelement location="${flightsearch.testoutput.dir}"/>
+    <pathelement location="${flightsearch.output.dir}"/>
+    <path refid="library.maven:_org.apache.commons:commons-csv:1.3.classpath"/>
+    <path refid="library.maven:_com.opencsv:opencsv:3.8.classpath"/>
+    <path refid="library.maven:_org.apache.commons:commons-lang3:3.4.classpath"/>
+    <path refid="library.maven:_commons-beanutils:commons-beanutils:1.9.2.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.1.classpath"/>
+    <path refid="library.maven:_commons-collections:commons-collections:3.2.1.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.flightsearch">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.flightsearch">
+    <patternset refid="excluded.from.module.flightsearch"/>
+  </patternset>
+  
+  <path id="flightsearch.module.sourcepath">
+    <dirset dir="${module.flightsearch.basedir}">
+      <include name="src/main/java"/>
+      <include name="src/main/resources"/>
+    </dirset>
+  </path>
+  
+  <path id="flightsearch.module.test.sourcepath">
+    <dirset dir="${module.flightsearch.basedir}">
+      <include name="src/test/java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.flightsearch" depends="compile.module.flightsearch.production,compile.module.flightsearch.tests" description="Compile module Flightsearch"/>
+  
+  <target name="compile.module.flightsearch.production" depends="register.custom.compilers" description="Compile module Flightsearch; production classes">
+    <mkdir dir="${flightsearch.output.dir}"/>
+    <javac2 destdir="${flightsearch.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.flightsearch}/javac">
+      <compilerarg line="${compiler.args.flightsearch}"/>
+      <bootclasspath refid="flightsearch.module.bootclasspath"/>
+      <classpath refid="flightsearch.module.production.classpath"/>
+      <src refid="flightsearch.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.flightsearch"/>
+    </javac2>
+    
+    <copy todir="${flightsearch.output.dir}">
+      <fileset dir="${module.flightsearch.basedir}/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.flightsearch.basedir}/src/main/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.flightsearch.tests" depends="register.custom.compilers,compile.module.flightsearch.production" description="compile module Flightsearch; test classes" unless="skip.tests">
+    <mkdir dir="${flightsearch.testoutput.dir}"/>
+    <javac2 destdir="${flightsearch.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.flightsearch}/javac">
+      <compilerarg line="${compiler.args.flightsearch}"/>
+      <bootclasspath refid="flightsearch.module.bootclasspath"/>
+      <classpath refid="flightsearch.module.classpath"/>
+      <src refid="flightsearch.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.flightsearch"/>
+    </javac2>
+    
+    <copy todir="${flightsearch.testoutput.dir}">
+      <fileset dir="${module.flightsearch.basedir}/src/test/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.flightsearch" description="cleanup module">
+    <delete dir="${flightsearch.output.dir}"/>
+    <delete dir="${flightsearch.testoutput.dir}"/>
+  </target>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.flightsearch" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.flightsearch" description="build all modules"/>
+
+  <target name="jar">
+    <mkdir dir="build/jar"/>
+    <jar destfile="build/jar/FlightSearch.jar" basedir="build">
+      <manifest>
+        <attribute name="Main-Class" value="com/nagarro/java/assignment/flight_search.FlightSearch"/>
+      </manifest>
+    </jar>
+
+  </target>
+  <target name="run">
+    <java jar="build/jar/FlightSearch.jar" fork="true"/>
+  </target>
+
+  <target name="all" depends="build.modules" description="build all"/>
+
+
+
+</project>

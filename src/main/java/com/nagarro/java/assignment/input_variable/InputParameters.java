@@ -4,6 +4,12 @@ import com.nagarro.java.assignment.enums.OutputPreference;
 
 import java.time.LocalDate;
 
+/**
+ * This class takes input from user and store it in the variable
+ * Helps to get these values via getter
+ */
+
+
 
 public class InputParameters {
 
@@ -16,6 +22,12 @@ public class InputParameters {
     private OutputPreference outputPreference;
 
     private String Departure_location;
+
+
+    /**
+     *
+     * Getters and Setters
+     */
 
     public void setArrival_Location(String arrival_location)
     {

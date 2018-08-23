@@ -78,18 +78,18 @@ public class FlightSearch {
 
         }
 
-        ArrayList<PrintInformation> results=new ArrayList<>();
+        ArrayList<PrintInformation> resultlist=new ArrayList<>();
 
         for(Future<ArrayList<PrintInformation>> future:result) {
 
 
 
-            results.addAll(future.get());
+            resultlist.addAll(future.get());
 
         }
         PrintInformation print=new PrintInformation();
 
-        print.display(results);
+        print.display(resultlist);
 
         /**
          * await Termination works as join in threads
@@ -120,34 +120,67 @@ public class FlightSearch {
 
         System.out.println("Enter Departure Location");
 
-        while(true) {
+        /**
+         * validation will keep on asking for correct departure location
+         */
+
+        while(true)
+        {
+
             String departure = sc.nextLine();
+
             if(valid.isValidDapartureLoactaion(departure)){
+
                 input.setDepartureLocation(departure);
+
                 break;
+
             }
+
             else{
+
                 System.out.println("Enter valid Departure Location");
+
             }
+
         }
 
 
         System.out.println("Enter Arrival Location");
 
+
+        /**
+         * validation will keep on asking for correct arrival location
+         */
+
         while(true) {
+
             String arrival = sc.nextLine();
+
             if(valid.isValidArrivalLoactaion(arrival)) {
+
                 input.setArrival_Location(arrival);
+
                 break;
+
             }
+
             else{
+
                 System.out.println("Enter Valid Arrival Location");
+
             }
+
         }
+
 
         System.out.println("Enter Date of flight");
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d-MM-yyyy");
+
+        /**
+         * validation will keep on asking for correct  flight date
+         */
 
         while(true) {
             try {
@@ -162,44 +195,71 @@ public class FlightSearch {
 
         System.out.println("Enter the CLASS in which you want to fly");
 
-        while (true) {
-        String FlightClass=sc.nextLine();
+        /**
+         * validation will keep on asking for correct  flight class
+         */
+
+        while (true)
+
+        {
+
+            String FlightClass=sc.nextLine();
 
 
             if(valid.isValidClass(FlightClass)) {
+
                 input.setFlightclass(FlightClass);
+
                 break;
+
             }
+
             else {
                 System.out.println("Enter the valid flight class");
             }
         }
 
-        System.out.println("Enter the output Criteria--BYFARE OR BYFAREANDDURATION");
+        System.out.println("Enter the output Criteria as BYFARE OR BYFAREANDDURATION");
 
         input.setOutputPreference(sc.nextLine());
 
 
         /**
          * Getting the folder where files are present
+         * Relative path
          */
 
-        File folder = new File("C:\\Users\\puneetkhurana01\\IdeaProjects\\Flightsearch\\files");
+
+
+        File folder = new File("files");
+
+
+        /**
+         * Reloading the files from directory after every 5 seconds so that if new file is added ,it gets loaded
+         */
 
         while(true) {
 
+            try{
 
-           try{
                obj.crawlDirectoryAndProcessFiles(folder, input);
+
                 for(int i=0;i<150;i++){
+
                     System.out.print("*");
+
                 }
+
                System.out.println();
+
                Thread.sleep(5000);
            }
+
            catch (Exception e){
+
                e.printStackTrace();
-           }
+
+            }
 
 
         }

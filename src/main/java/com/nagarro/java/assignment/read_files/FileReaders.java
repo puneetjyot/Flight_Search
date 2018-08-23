@@ -72,8 +72,10 @@ public class FileReaders implements Callable<ArrayList<PrintInformation>> {
 
         /**
          * Reading CSV files using csv parser
-         *
+         * CSVFORMAT sets the format of the csv file you are going to read
          */
+
+
 
         CSVFormat format = CSVFormat.RFC4180.withHeader().withDelimiter(',');
 
@@ -84,13 +86,18 @@ public class FileReaders implements Callable<ArrayList<PrintInformation>> {
         CSVParser parser = new CSVParser(new FileReader(file), format);
 
 
-        //  System.out.println("DEP_LOC" + " " + "ARR_LOC" + " " + "VALID_TILL" + " " + "CLASS");
-       // System.out.println("hello");
 
         for (CSVRecord record : parser) {
 
             LocalDate date=LocalDate.parse(record.get("VALID_TILL"),DateTimeFormatter.ofPattern("d-MM-yyyy"));
-           // System.out.println(record.get("DEP_LOC"));
+
+            /**
+             * Parse the values from csv files using there headers
+             *
+             * Filter the result while reading the file
+             * and if record satisfies the condition then storing it in arraylist
+             */
+
             if(record.get("DEP_LOC").equalsIgnoreCase(input.getDepartureLocation())&&
 
                     record.get("ARR_LOC").equalsIgnoreCase(input.getArrival_Location())&&
@@ -111,7 +118,10 @@ public class FileReaders implements Callable<ArrayList<PrintInformation>> {
                         print.setDeparture_location(record.get("DEP_LOC"));
 
                         print.setArrival_location(record.get("ARR_LOC"));
-                        // print.setFlightDate(record.get("VALID_TILL"));
+
+                        /**
+                         * DateTimeFormatter helps you to set the format in which you want to parse date
+                         */
 
                         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d-MM-yyyy");
 
@@ -137,8 +147,8 @@ public class FileReaders implements Callable<ArrayList<PrintInformation>> {
                 }
               //  System.out.println(record.get("FLIGHT_NO"));
                 /**
-                 * making a object of PrintInformation calss everytime
-                 * to store searche results in arraylist
+                 * making a object of PrintInformation class everytime
+                 * to store search results in arraylist
                  */
 
                 else {

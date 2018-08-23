@@ -30,22 +30,12 @@ public class PrintInformation {
     ArrayList<PrintInformation> printlist;
 
 
-
-
-    public PrintInformation(){
-
-        printlist=new ArrayList<>();
-
-    }
-
-
     /**
      * display method accepting arraylist of PrintInformation
      * @param printlist
      */
 
     public  void  display(ArrayList<PrintInformation> printlist) {
-// DEL MUB 05-12-2013 B BYFARE
 
 
         /**
